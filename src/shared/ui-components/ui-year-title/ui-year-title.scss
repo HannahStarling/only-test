@@ -1,0 +1,10 @@
+@import "src/styles/mixins.scss";
+
+.ui-year-title {
+  margin: 0;
+  @include text-style($font-secondary, calc(#{$base-font-size} * #{$years-scale}), $font-weight-regular, $base-line-height, left, $accent-blue);
+
+  @media (width < 426px) {
+    font-size: 16px;
+  }
+}

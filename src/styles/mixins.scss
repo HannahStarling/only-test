@@ -1,0 +1,57 @@
+@import "src/styles/variables.scss";
+
+// _____________FONTS_____________
+
+// Миксин для текста, чтобы переиспользовать базовые значения
+@mixin text-style($font-family, $font-size, $font-weight, $line-height, $text-align: left,$color: $typography-main ) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  text-align: $text-align;
+  color: $color;
+}
+
+// _____________MEDIA_____________
+
+// Миксин для медиазапросов
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// _____________BLOCKS_____________
+// Миксин для отступов
+@mixin margin-padding($margin: 0, $padding: 0) {
+  margin: $margin;
+  padding: $padding;
+}
+
+// _____________COMPONENTS_____________
+// Миксин для кнопок
+@mixin button-style($bg-color, $box-shadow, $size) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+  border: none;
+  box-shadow: $box-shadow;
+  background: $bg-color;
+  cursor: pointer;
+  padding: 0 10px 10px 0;
+}

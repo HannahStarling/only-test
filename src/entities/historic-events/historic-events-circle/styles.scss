@@ -1,0 +1,112 @@
+@import "src/styles/fonts.scss";
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.event-circle {
+  --angle: 0deg;
+  --time: 300ms;
+  --delay: 300ms;
+
+  position: absolute;
+  top: 215px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: $line-color;
+    top: 265px;
+    left: 0;
+    z-index: 0;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  &__main-circle {
+    position: relative;
+    width: 530px;
+    height: 530px;
+    border: 1px solid $spinner-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(var(--angle));
+    transition: all var(--time) ease-in-out;
+    z-index: 2;
+  }
+
+  &__circle-area {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+    visibility: visible;
+
+    &:hover .event-circle__circle {
+      background-color: $bg-color;
+      scale: 1;
+    }
+  }
+
+  &__circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: $typography-main;
+    border: 1px solid $circle-color;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: $typography-main;
+    scale: 0.105;
+    transition: all 300ms ease-in-out;
+    transform: rotate(calc(-360deg / var(--count) * var(--segment) - var(--angle)));
+  }
+
+  &__title {
+    position: absolute;
+    left: 76px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms linear var(--delay);
+  }
+
+  &__segment {
+    width: calc(100% + 56px);
+    position: absolute;
+    transform-origin: center;
+    transform: rotate(calc(360deg / var(--count) * var(--segment)));
+    visibility: hidden;
+
+    &_active {
+      & .event-circle__title {
+        opacity: 1;
+        visibility: visible;
+        cursor: default;
+      }
+
+      & .event-circle__circle {
+        width: 56px;
+        height: 56px;
+        background-color: $bg-color;
+        scale: 1;
+        cursor: default;
+      }
+    }
+  }
+}

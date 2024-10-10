@@ -1,0 +1,53 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.historic-events {
+  &__range {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 973px;
+    text-align: center;
+    z-index: 1;
+
+    @include respond-to(xl) {
+      max-width: 660px;
+    }
+
+    @include respond-to(md) {
+      max-width: 273px;
+    }
+
+    @include respond-to(sm) {
+      padding-top: 70px;
+    }
+
+    &-title {
+      margin: 96px 0;
+      letter-spacing: -.02em;
+      @include text-style(
+                      $font-primary,
+                      calc(#{$base-font-size} * #{$years-big-scale}),
+                      $font-weight-bold,
+                      $years-big-line-height,
+                      center,
+                      $accent-blue
+      );
+
+      @include respond-to(xl) {
+        font-size: 140px;
+      }
+
+      @include respond-to(md) {
+        margin: 0;
+        font-size: 56px;
+      }
+
+      &_accent {
+        color: $accent-pink;
+      }
+    }
+  }
+}

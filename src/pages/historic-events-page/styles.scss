@@ -1,0 +1,16 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.historic-events {
+  position: relative;
+  min-height: 1080px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @media (width < 426px) {
+    min-height: 0;
+    padding-bottom: 13.33px;
+  }
+}

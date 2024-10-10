@@ -1,0 +1,11 @@
+@import "src/styles/mixins.scss";
+
+.ui-year-text {
+  margin: 0;
+  @include text-style($font-primary, $base-font-size, $font-weight-regular, $base-line-height);
+
+  @media (width < 426px) {
+    font-size: 14px;
+    line-height: 145%;
+  }
+}

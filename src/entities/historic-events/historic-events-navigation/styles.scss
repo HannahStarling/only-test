@@ -1,0 +1,46 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+
+.historic-events {
+  &__navigation {
+    @include margin-padding(137px 0 0 80px);
+    order: 1;
+    width: 100%;
+    max-width: 120px;
+
+    &-total {
+      @include text-style($font-primary, 14px, $font-weight-regular, $base-line-height);
+      padding-bottom: 20px;
+
+      @include respond-to(sm) {
+        padding-bottom: 10.67px;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+
+      &_prev {
+        transform: rotate(135deg);
+      }
+
+      &_next {
+        transform: rotate(-35deg);
+      }
+    }
+
+    @include respond-to(sm) {
+      max-width: 58.33px;
+      margin-left: 20px;
+      position: absolute;
+      bottom: 13.33px;
+      z-index: 99;
+    }
+
+    @include respond-to(md) {
+      order: 2;
+    }
+  }
+}

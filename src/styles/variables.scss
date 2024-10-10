@@ -1,0 +1,37 @@
+// Цветовые переменные
+$primary-white: #FFFFFF;
+
+$typography-main: #42567A;
+$accent-purple: #5D5FEF;
+$accent-pink: #EF5DA8;
+$accent-blue: #3877EE;
+
+$line-color: #E3E6ED;
+$bg-color: #F4F5F9;
+
+$spinner-color: #D0D5E0;
+$circle-color: #303e5880;
+$dot-color: #42567A;
+
+// Переменные для шрифтов
+$font-primary: 'PT Sans', sans-serif;
+$font-secondary: 'Bebas Neue', sans-serif;
+
+// Медиазапросы
+$breakpoint-sm: 426px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1024px;
+
+// Базовые значения
+$base-font-size: 20px; // базовый размер шрифта
+$base-line-height: 30px; // базовый line-height
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Переменные для масштабирования шрифтов (относительные значения)
+$main-title-scale: 2.8; // масштаб для основного заголовка
+$years-scale: 1.25; // масштаб для "годов"
+$years-big-scale: 10; // масштаб для больших "годов"
+$main-title-line-height-scale: 1.2; // масштаб line-height для основного заголовка
+$years-big-line-height: 160px; // фиксированный line-height для больших "годов"

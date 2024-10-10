@@ -1,0 +1,44 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.ui-title {
+  position: relative;
+  margin: 0;
+  padding: 170px 0 0 78px;
+  max-width: 353px;
+
+  @include text-style(
+                  $font-primary,
+                  calc(#{$base-font-size} * #{$main-title-scale}),
+                  $font-weight-bold,
+                  120% //67.2px
+  );
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 5px; /* Ширина границы */
+    background: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%);
+    height: 120px;
+  }
+
+  @media (width < 426px) {
+    padding-top: 59px;
+    padding-left: 20px;
+    max-width: 123px;
+
+    @include text-style(
+                    $font-primary,
+                    $base-font-size,
+                    $font-weight-bold,
+                    120%
+    );
+
+    &::before {
+      display: none;
+    }
+  }
+}
+

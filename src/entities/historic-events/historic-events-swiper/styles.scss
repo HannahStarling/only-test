@@ -1,0 +1,111 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+// ____________STYLES_____________
+
+.historic-events {
+  &__swiper {
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    margin-top: 56px;
+    margin-bottom: 104px;
+    order: 2;
+
+    @include respond-to(md) {
+      order: 1;
+      margin-top: 35px;
+      margin-bottom: 0;
+    }
+
+    &_show {
+      opacity: 1;
+
+      @include respond-to(sm) {
+        animation: slideToUp 300ms ease-in-out;
+      }
+    }
+
+    & .swiper-pagination {
+      display: none;
+
+      @include respond-to(md) {
+        display: block;
+      }
+    }
+
+    &-slide {
+      max-width: 400px;
+      min-height: 220px;
+      width: 100%;
+
+      @include respond-to(sm) {
+        min-height: 0;
+        min-width: 166px;
+        opacity: 0.4;
+
+        &.swiper-slide-active {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-btn {
+      @include button-style($primary-white, 0 0 15px 0 rgba(56, 119, 238, 0.1), 40px);
+
+      &::before {
+        content: "";
+        position: absolute;
+        border: solid $accent-blue;
+        width: 6px;
+        height: 6px;
+        border-width: 0 2px 2px 0;
+      }
+
+      &_prev {
+        left: 20px;
+        transform: rotate(135deg);
+      }
+
+      &_next {
+        right: 20px;
+        transform: rotate(-45deg);
+      }
+
+      &:disabled {
+        display: none;
+      }
+
+      @include respond-to(md) {
+        display: none;
+      }
+    }
+
+    &-title {
+      padding-bottom: 20px;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: $typography-main;
+      display: none;
+
+      @include respond-to(sm) {
+        display: block;
+      }
+    }
+
+    @include respond-to(sm) {
+      padding-left: 20px;
+      padding-right: 20px;
+      display: block;
+
+      & .swiper {
+        border-top: 1px solid $line-color;
+        padding-top: 20px;
+        min-height: 217px;
+      }
+    }
+  }
+}
