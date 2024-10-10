@@ -14,7 +14,7 @@
 1. Клонируйте репозиторий:
 
 ```bash
-git clone <адрес-репозитория>
+git clone https://github.com/HannahStarling/only-test.git
 ```
 
 2. Перейдите в папку с проектом:
